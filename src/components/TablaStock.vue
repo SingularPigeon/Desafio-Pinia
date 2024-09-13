@@ -1,31 +1,3 @@
-<template>
-  <div class="container">
-    <table>
-      <thead>
-        <tr>
-          <th>Código</th>
-          <th>Nombre</th>
-          <th>Stock</th>
-          <th>Precio</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="juego in juegos" :key="juego.codigo">
-          <td>{{ juego.codigo }}</td>
-          <td>{{ juego.nombre }}</td>
-          <td>{{ juego.stock }}</td>
-          <td>{{ juego.precio }}</td>
-          <td>
-            <button @click="agregarStock(juego.codigo)">Agregar</button>
-            <button @click="disminuirStock(juego.codigo)">Disminuir</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</template>
-
 <script>
 export default {
   props: {
@@ -40,9 +12,38 @@ export default {
     disminuirStock: {
       type: Function,
       required: true
+    },
+    formatearPrecio: {
+      type: Function,
+      required: true
     }
   }
 }
 </script>
+<template>
+  <table class="table table-hover text-center">
+    <thead class="table-light">
+      <tr>
+        <th>Código</th>
+        <th>Nombre</th>
+        <th>Stock</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr v-for="juego in juegos" :key="juego.codigo">
+        <td>{{ juego.codigo }}</td>
+        <td>{{ juego.nombre }}</td>
+        <td>{{ juego.stock }}</td>
+        <td>{{ formatearPrecio(juego.precio) }}</td>
+        <td class="d-flex justify-content-around">
+          <button class="btn btn-success" @click="agregarStock(juego.codigo)">+</button>
+          <button class="btn btn-danger" @click="disminuirStock(juego.codigo)">-</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</template>
 
 <style scoped></style>

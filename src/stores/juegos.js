@@ -28,7 +28,9 @@ export const useJuegosStore = defineStore('juegos', () => {
   function disminuirStock(codigo) {
     juegos.value.find((juego) => {
       if (juego.codigo === codigo) {
-        juego.stock--
+        if (juego.stock > 0) {
+          juego.stock--
+        }
       }
     })
   }

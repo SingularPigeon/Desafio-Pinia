@@ -1,10 +1,3 @@
-<template>
-  <div class="container">
-    <h1>Home</h1>
-    <TablaStock :juegos="juegos" :agregarStock="agregarStock" :disminuirStock="disminuirStock" />
-  </div>
-</template>
-
 <script>
 import TablaStock from '@/components/TablaStock.vue'
 import { useJuegosStore } from '@/stores/juegos'
@@ -14,18 +7,15 @@ export default {
   components: {
     TablaStock
   },
-  data() {
-    return {
-      juegosStore: useJuegosStore() // Obtén la instancia del store
-    }
-  },
+
   computed: {
     ...mapStores(useJuegosStore),
+
     juegos() {
       return this.juegosStore.juegos
     }
   },
-  mounted() {
+  created() {
     this.juegosStore.fetchJuegos()
   },
   methods: {
@@ -34,9 +24,27 @@ export default {
     },
     disminuirStock(codigo) {
       this.juegosStore.disminuirStock(codigo)
+    },
+    formatearPrecio(precio) {
+      return new Intl.NumberFormat('es-ES', {
+        style: 'currency',
+        currency: 'CLP'
+      }).format(precio)
     }
   }
 }
 </script>
+<template>
+  <div class="container text-center">
+    <h1 class="my-5">Tienda 32 bits</h1>
+    <h2 class="mb-3">Lista de juegos</h2>
+    <TablaStock
+      :juegos="juegos"
+      :agregarStock="agregarStock"
+      :disminuirStock="disminuirStock"
+      :formatearPrecio="formatearPrecio"
+    />
+  </div>
+</template>
 
 <style scoped></style>
