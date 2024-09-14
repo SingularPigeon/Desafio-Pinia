@@ -1,35 +1,22 @@
-# desafio-pinia
+# Desafio-Pinia.
 
-This template should help get you started developing with Vue 3 in Vite.
+Aplicar conocimientos para implementar un aplicativo web utilizando Pinia para el almacenamiento del estado de los componentes y crear un prototipo de sistema de gestión de productos.
+![](/public/preview-desafio-pinia.png)
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Dependencias
 
-## Customize configuration
+**Vue.js**: Framework principal para la construcción de la interfaz.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+**Pinia**: Manejo del estado global de la aplicación.
 
-## Project Setup
+**Axios**: Para realizar solicitudes HTTP y obtener datos de la API.
+Bootstrap: Para estilos de la tabla y botones.
 
-```sh
-npm install
-```
+---
 
-### Compile and Hot-Reload for Development
+### Autores
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- **Desarolladora**:[Paloma Rivera](https://github.com/SingularPigeon)
+- **Diseño**: [Bootcamp Desafío Latam](desafiolatam.com)

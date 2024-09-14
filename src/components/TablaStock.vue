@@ -1,5 +1,6 @@
 <script>
 export default {
+  // propiedades recibidas desde el componente padre 'Homeview'
   props: {
     juegos: {
       type: Array,
@@ -32,6 +33,7 @@ export default {
       </tr>
     </thead>
     <tbody class="table-group-divider">
+      <!--Iteración sobre cada juego en la lista recibida como prop-->
       <tr v-for="juego in juegos" :key="juego.codigo">
         <td>{{ juego.codigo }}</td>
         <td>{{ juego.nombre }}</td>

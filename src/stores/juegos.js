@@ -1,7 +1,8 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia' // importación de la función de Pinia para crear una nueva store
 import { ref } from 'vue'
 import axios from 'axios'
 
+// definir la store 'juegos'
 export const useJuegosStore = defineStore('juegos', () => {
   const juegos = ref([])
 
@@ -12,11 +13,11 @@ export const useJuegosStore = defineStore('juegos', () => {
 
       juegos.value = data
     } catch (error) {
-      alert('No encontramos juegos unu')
+      alert('Error en la comunicación. Intentalo más tarde')
       console.error(error)
     }
   }
-
+  // función para agregar stock al juego correspondiente, dentro del array
   function agregarStock(codigo) {
     juegos.value.find((juego) => {
       if (juego.codigo === codigo) {
@@ -24,7 +25,7 @@ export const useJuegosStore = defineStore('juegos', () => {
       }
     })
   }
-
+  // función para disminuir stock al juego correspondiente, dentro del array
   function disminuirStock(codigo) {
     juegos.value.find((juego) => {
       if (juego.codigo === codigo) {
