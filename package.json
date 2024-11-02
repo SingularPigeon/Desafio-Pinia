@@ -1,7 +1,7 @@
 {
   "name": "desafio-pinia",
   "version": "0.0.0",
-  "homepage": "https://SingularPigeon.github.io/DesafioPinia/",
+  "homepage": "https://SingularPigeon.github.io/Desafio-Pinia/",
   "private": true,
   "type": "module",
   "scripts": {
