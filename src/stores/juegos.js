@@ -8,7 +8,7 @@ export const useJuegosStore = defineStore('juegos', () => {
 
   async function fetchJuegos() {
     try {
-      const url = '/api/juegos.json'
+      const url = './api/juegos.json'
       const { data } = await axios.get(url)
 
       juegos.value = data
