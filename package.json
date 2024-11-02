@@ -1,10 +1,13 @@
 {
   "name": "desafio-pinia",
   "version": "0.0.0",
+  "homepage": "https://SingularPigeon.github.io/DesafioPinia/",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
@@ -23,6 +26,7 @@
     "@vue/eslint-config-prettier": "^9.0.0",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
+    "gh-pages": "^6.2.0",
     "prettier": "^3.2.5",
     "vite": "^5.3.1"
   }
